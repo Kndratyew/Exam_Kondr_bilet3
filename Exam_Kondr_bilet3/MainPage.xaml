@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exam_Kondr_bilet3.MainPage" Title="Kondratiev">
+
+    <StackLayout>
+        <Button Text="Добавить" Clicked="CreateF" />
+        <ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
+                                <Label Text="{Binding Name, StringFormat='Фио студента: {0}'}" FontSize="24" VerticalOptions="Center" />
+                                <Image Source="logo.png" WidthRequest="120" HeightRequest="120" HorizontalOptions="End"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
